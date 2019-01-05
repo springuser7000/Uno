@@ -21,22 +21,33 @@
 </nav>
 <div class = "jumbotron jumbotron-fluid">
 	<div class = "container">
-        <h1 class = "display-3">Welcome.</h1>        
+        <h1 class = "display-3">PROJECT UNO</h1>        
 	</div>
 </div>
 
-<script>
-        (function(d, w, c) {
-            w.ChatraID = 'KWKJRzGz2HgtasAAa';
-            var s = d.createElement('script');
-            w[c] = w[c] || function() {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'Chatra');
-</script>
+
+<div align = "center">
+	<div align = "center">
+        <h2 id = "version_output"></h2>
+        <a href = "uno-game.html"><img src="https://img.icons8.com/color/48/000000/controller.png"></a>
+    </div>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div align = "center">
+    <p>If you wat to experience full Performance in this website, Use chrome</p>
+    <p><a href="https://icons8.com">Icon pack by Icons8</a></p>
+</div>
 <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -49,6 +60,11 @@
     messagingSenderId: "960073291054"
   };
   firebase.initializeApp(config);
+</script>
+<script>
+        var version = "1.1.1";
+        document.getElementById("version_output").innerHTML = "ALPHA_ver " + version;
+        
 </script>
 </body>
 </html>
