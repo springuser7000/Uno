@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Uno</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -15,50 +15,135 @@
 <div class="container">
   <h2 id ="money_html" class="display-2"></h2>
   <br>
-  <!-- Nav tabs -->
+  <!-- Menu -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#home">Point</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#menu1">Upgrade</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+      <a class="nav-link" data-toggle="tab" href="#fight_zone">Fight_Zone</a>
     </li>
   </ul>
+
+
+
+
+
+
+<!-- Main-->
 
   <!-- 포인트 획득 -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
-      <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney()">Earn Point</button>
+      <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney()"><img src="https://img.icons8.com/color/48/000000/coins.png"></button>
+      <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#Modal1"><img src="https://img.icons8.com/color/40/000000/motherboard.png"></button>
+
+      <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/dusk/40/000000/physics.png"></button>
+      <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#Modal3"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
     </div>
-    
-    
-    
-    
-    
-    <!-- asd-->
-    
-    <div id="menu1" class="container tab-pane fade"><br>
-      <h3>Upgrade</h3>
-      <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_hardware_upgrade">upgrade hardware</button>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div id="menu2" class="container tab-pane fade"><br>
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+   
+    <div id="fight_zone" class="container tab-pane fade"><br>
+      <h3 id = "Anti_html"></h3>
+     
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<!-- Some Modals-->
+
+
+
+  <div class="modal fade" id="Modal1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Hardware / Software Upgrade</h4>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_hardware_upgrade">upgrade hardware</button>
+          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_software()" id = "how_much_software_upgrade">upgrade software</button>
+        </div>
+       
+        
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+    <!------------------------------------------------------------------------------------------->
+  
+  <div class="modal fade" id="Modal2">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Some I1tems</h4>
+        </div>
+        <div class="modal-body">
+          <p>wqer</p>
+        </div>
+        
+        
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <!------------------------------------------------------------------------------------------->
+
+  <div class="modal fade" id="Modal3">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Lottery</h4>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-dark btn-block"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
+          <p>10 point require | 0 - 20 return</p>
+          <button type="button" class="btn btn-outline-dark btn-block"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
+          <p>50 point require | 0 - 150 return</p>
+          <button type="button" class="btn btn-outline-dark btn-block"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+          <p>100 point require | 50 - 200 return</p>
+          
+        </div>
+        
+        
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
 
 
 
@@ -67,9 +152,13 @@ var money = 30;
 var money_plus = 1;
 var fight_Antivirus = 0;
 var upgade_hardware_point = 50;
+var upgade_software_point = 100;
 
 document.getElementById("money_html").innerHTML = money + " Point";
-document.getElementById("how_much_hardware_upgrade").innerHTML = "upgrade hardware(" + upgade_hardware_point + " Point Require)";
+document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
+document.getElementById("how_much_hardware_upgrade").innerHTML = "Upgrade Hardware(" + upgade_hardware_point + " Point Require)";
+document.getElementById("how_much_software_upgrade").innerHTML = "Upgrade Software(" + upgade_software_point + " Point Require)";
+
 
 function earnmoney(){
     money = money + money_plus;
@@ -78,13 +167,27 @@ function earnmoney(){
 
 function upgrade_hardware(){
 	if (money >= upgade_hardware_point){
-    	money = money - upgade_hardware_point
-        upgade_hardware_point = upgade_hardware_point + 75
-        money_plus = money_plus + 1
+    	money = money - upgade_hardware_point;
+        upgade_hardware_point = upgade_hardware_point + 75;
+        money_plus = money_plus + 1;
         document.getElementById("money_html").innerHTML = money + " Point";
-        document.getElementById("how_much_hardware_upgrade").innerHTML = "upgrade hardware(" + upgade_hardware_point + " Point Require)";
+        document.getElementById("how_much_hardware_upgrade").innerHTML = "Upgrade Hardware(" + upgade_hardware_point + " Point Require)";
     } else {
     alert("Not Enough point for upgade hardware");
+    }
+
+}
+
+function upgrade_software(){
+	if (money >= upgade_software_point){
+    	money = money - upgade_software_point;
+        upgade_software_point = upgade_software_point + 100;
+        fight_Antivirus = fight_Antivirus + 1;
+        document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
+        document.getElementById("money_html").innerHTML = money + " Point";
+        document.getElementById("how_much_software_upgrade").innerHTML = "Upgrade Software(" + upgade_software_point + " Point Require)";
+    } else {
+    alert("Not Enough point for upgade software");
     }
 
 }
