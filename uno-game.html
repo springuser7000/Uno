@@ -1,46 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>UNO</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-<style>
-h2 {
-	color: white
-}
-
-
-</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+<br>
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
-  <ul class="nav navbar-nav">
-    <li><a href="#"><img src="https://img.icons8.com/color/48/000000/expensive.png"></a></li>
-    <li><h2 id ="money_html"></h2></li>
+<div class="container">
+  <h2 id ="money_html" class="display-2"></h2>
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">Point</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">Upgrade</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+    </li>
   </ul>
-</nav>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <ul class="nav navbar-nav">
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-</nav>
+  <!-- 포인트 획득 -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney()">Earn Point</button>
+    </div>
+    
+    
+    
+    
+    
+    <!-- asd-->
+    
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Upgrade</h3>
+      <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_hardware_upgrade">upgrade hardware</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+</div>
+
 
 
 <script>
+var money = 30;
+var money_plus = 1;
+var fight_Antivirus = 0;
+var upgade_hardware_point = 50;
 
+document.getElementById("money_html").innerHTML = money + " Point";
+document.getElementById("how_much_hardware_upgrade").innerHTML = "upgrade hardware(" + upgade_hardware_point + " Point Require)";
 
+function earnmoney(){
+    money = money + money_plus;
+    document.getElementById("money_html").innerHTML = money + " Point";
+}
 
+function upgrade_hardware(){
+	if (money >= upgade_hardware_point){
+    	money = money - upgade_hardware_point
+        upgade_hardware_point = upgade_hardware_point + 75
+        money_plus = money_plus + 1
+        document.getElementById("money_html").innerHTML = money + " Point";
+        document.getElementById("how_much_hardware_upgrade").innerHTML = "upgrade hardware(" + upgade_hardware_point + " Point Require)";
+    } else {
+    alert("Not Enough point for upgade hardware");
+    }
 
+}
 
 </script>
-
 </body>
 </html>
