@@ -118,11 +118,11 @@
           <h4 class="modal-title">Lottery</h4>
         </div>
         <div class="modal-body">
-          <button type="button" class="btn btn-outline-dark btn-block"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_cheap()"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
           <p>10 point require | 0 - 20 return</p>
-          <button type="button" class="btn btn-outline-dark btn-block"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_midium()"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
           <p>50 point require | 0 - 150 return</p>
-          <button type="button" class="btn btn-outline-dark btn-block"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expensive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
           <p>100 point require | 50 - 200 return</p>
           
         </div>
@@ -153,6 +153,8 @@ var money_plus = 1;
 var fight_Antivirus = 0;
 var upgade_hardware_point = 50;
 var upgade_software_point = 100;
+var Lottery_point;
+
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
@@ -191,6 +193,31 @@ function upgrade_software(){
     }
 
 }
+
+function Lottery_cheap(){
+	Lottery_point = Math.floor()(Math.random() * 20);
+    money = money - 10;
+    money = money + Lottery_point;
+    alert(Lottery_point + " returned!");
+}
+
+function Lottery_midium(){
+	Lottery_point = Math.floor()(Math.random() * 150);
+    money = money - 50;
+    money = money + Lottery_point;
+    alert(Lottery_point + " returned!");
+}
+
+function Lottery_expencive(){
+	Lottery_point = Math.floor()(Math.random() * 200);
+    money = money - 100;
+    money = money + Lottery_point;
+    alert(Lottery_point + " returned!");
+    
+}
+
+
+
 
 </script>
 </body>
