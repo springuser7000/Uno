@@ -122,7 +122,7 @@
           <p>10 point require | 0 - 20 return</p>
           <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_midium()"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
           <p>50 point require | 0 - 150 return</p>
-          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expensive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expencive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
           <p>100 point require | 50 - 200 return</p>
           
         </div>
@@ -162,9 +162,16 @@ document.getElementById("how_much_hardware_upgrade").innerHTML = "Upgrade Hardwa
 document.getElementById("how_much_software_upgrade").innerHTML = "Upgrade Software(" + upgade_software_point + " Point Require)";
 
 
+
+function update(){
+  document.getElementById("money_html").innerHTML = money + " Point";
+  document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
+}
+
+
 function earnmoney(){
     money = money + money_plus;
-    document.getElementById("money_html").innerHTML = money + " Point";
+    update()
 }
 
 function upgrade_hardware(){
@@ -172,10 +179,10 @@ function upgrade_hardware(){
     	money = money - upgade_hardware_point;
         upgade_hardware_point = upgade_hardware_point + 75;
         money_plus = money_plus + 1;
-        document.getElementById("money_html").innerHTML = money + " Point";
+        update()
         document.getElementById("how_much_hardware_upgrade").innerHTML = "Upgrade Hardware(" + upgade_hardware_point + " Point Require)";
     } else {
-    alert("Not Enough point for upgade hardware");
+    window.alert("Not Enough point for upgade hardware");
     }
 
 }
@@ -185,35 +192,42 @@ function upgrade_software(){
     	money = money - upgade_software_point;
         upgade_software_point = upgade_software_point + 100;
         fight_Antivirus = fight_Antivirus + 1;
-        document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
-        document.getElementById("money_html").innerHTML = money + " Point";
+        update();
         document.getElementById("how_much_software_upgrade").innerHTML = "Upgrade Software(" + upgade_software_point + " Point Require)";
     } else {
-    alert("Not Enough point for upgade software");
+    window.alert("Not Enough point for upgade software");
     }
 
 }
 
 function Lottery_cheap(){
-	Lottery_point = Math.floor()(Math.random() * 20);
+	if (money >= 10){
+	  Lottery_point = Math.floor(Math.random() * 20);
     money = money - 10;
     money = money + Lottery_point;
-    alert(Lottery_point + " returned!");
+    update();
+    window.alert(Lottery_point + " returned!");
+    }
 }
 
 function Lottery_midium(){
-	Lottery_point = Math.floor()(Math.random() * 150);
+	if (money >= 50){
+	  Lottery_point = Math.floor(Math.random() * 150);
     money = money - 50;
     money = money + Lottery_point;
-    alert(Lottery_point + " returned!");
+    update();
+    window.alert(Lottery_point + " returned!");
+    }
 }
 
 function Lottery_expencive(){
-	Lottery_point = Math.floor()(Math.random() * 200);
+	if (money >= 100){
+    Lottery_point = Math.floor(Math.random() * 200);
     money = money - 100;
     money = money + Lottery_point;
-    alert(Lottery_point + " returned!");
-    
+    update();
+    window.alert(Lottery_point + " returned!");
+    }
 }
 
 
