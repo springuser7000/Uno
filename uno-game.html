@@ -44,8 +44,8 @@
     </div>
    
     <div id="fight_zone" class="container tab-pane fade"><br>
-      <h3 id = "Anti_html"></h3>
       <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/dusk/40/000000/physics.png"></button>
+      <button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#Modal4"><img src="https://img.icons8.com/color/48/000000/gear.png"></button>
     </div>
   </div>
 </div>
@@ -116,19 +116,28 @@
           <p>100 point require | 50 - 200 return</p>
           
         </div>
-        
-        
-        
+
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
+                </div>
     </div>
   </div>
-  
-
+</div>
+  <div class="modal fade" id="Modal4">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Command</h4>
+        </div>
+        <div class="modal-body">
+    <div class="form-group has-success has-feedback">
+        <input type="text" class="form-control" id="input_some_command" onkeyup = "Input_command();">
+    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
 
 
 
@@ -140,13 +149,13 @@
 
 <!-- Some Script -->
 <script>
-var money = 5000;
+var money = 50;
 var money_plus = 1;
 var fortune_power = 0;
 var upgrade_mining_point = 50;
 var upgrade_fortune_point = 100;
 var Lottery_point;
-var onoff_fortune_alert; 
+var alert_onoff = 1; 
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
@@ -159,9 +168,12 @@ function update(){
 }
 
 function fortune_function(){
-  if (fortune_power > Math.floor(Math.random() * 50)){   
-    money = money + money_plus * 20
-    window.alert(money_plus * 20 + " added!");
+  if (fortune_power > Math.floor(Math.random() * 100)){   
+    money = money + money_plus * 10
+    if (alert_onoff == 1){
+    	window.alert(money_plus * 20 + " added!");
+    }
+    
     update()
    }
   }
@@ -193,7 +205,7 @@ function upgrade_software(){
         update();
         document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
     } else {
-    window.alert("Not Enough point for upgade software");
+    	window.alert("Not Enough point for upgade software");
     }
 
 }
@@ -204,8 +216,10 @@ function Lottery_cheap(){
     money = money - 10;
     money = money + Lottery_point;
     update();
-    window.alert(Lottery_point + " returned!");
+    if (alert_onoff == 1){
+    	window.alert(Lottery_point + " returned!");
     }
+  }
 }
 
 function Lottery_midium(){
@@ -214,8 +228,10 @@ function Lottery_midium(){
     money = money - 50;
     money = money + Lottery_point;
     update();
-    window.alert(Lottery_point + " returned!");
+    if (alert_onoff == 1){
+    	window.alert(Lottery_point + " returned!");
     }
+  }
 }
 
 function Lottery_expencive(){
@@ -224,9 +240,26 @@ function Lottery_expencive(){
     money = money - 100;
     money = money + Lottery_point;
     update();
-    window.alert(Lottery_point + " returned!");
+    if (alert_onoff == 1){
+    	window.alert(Lottery_point + " returned!");
     }
+  }
 }
+function Input_command() {
+        if (window.event.keyCode == 13) {
+			    DaTa = $("#input_some_command").val();
+          document.getElementById("input_some_command").value = "";
+          if (DaTa.toLowerCase() == "offalert") {
+            alert_onoff = 0;
+          }else if (DaTa.toLowerCase() == "onalert") {
+            alert_onoff = 1;
+          }else if (DaTa.toLowerCase() == "fastnoobbuff" || "ff"){
+          	money = money + 1000;
+            update();
+          }
+        }
+}
+ 
 
 
 
