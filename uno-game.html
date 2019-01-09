@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
+
+
 <head>
   <title>Uno</title>
   <meta charset="utf-8">
@@ -18,10 +21,10 @@
   <!-- Menu -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#home">Point</a>
+      <a class="nav-link active" data-toggle="tab" href="#home">Original</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#fight_zone">Fight_Zone</a>
+      <a class="nav-link" data-toggle="tab" href="#fight_zone">Expansion </a>
     </li>
   </ul>
 
@@ -30,21 +33,19 @@
 
 
 
-<!-- Main-->
+<!-- Some Tabs-->
 
   <!-- 포인트 획득 -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
       <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney()"><img src="https://img.icons8.com/color/48/000000/coins.png"></button>
-      <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#Modal1"><img src="https://img.icons8.com/color/40/000000/motherboard.png"></button>
-
-      <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/dusk/40/000000/physics.png"></button>
+      <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#Modal1"><img src="https://img.icons8.com/color/48/000000/buy-upgrade.png"></button>
       <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#Modal3"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
     </div>
    
     <div id="fight_zone" class="container tab-pane fade"><br>
       <h3 id = "Anti_html"></h3>
-     
+      <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/dusk/40/000000/physics.png"></button>
     </div>
   </div>
 </div>
@@ -66,15 +67,12 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Hardware / Software Upgrade</h4>
+          <h4 class="modal-title">Mining / Fortune Upgrade</h4>
         </div>
         <div class="modal-body">
-          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_hardware_upgrade">upgrade hardware</button>
-          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_software()" id = "how_much_software_upgrade">upgrade software</button>
+          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_mining_upgrade">upgrade mining</button>
+          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_software()" id = "how_much_fortune_upgrade">upgrade Fortune</button>
         </div>
-       
-        
-        
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
@@ -82,10 +80,7 @@
         
       </div>
     </div>
-  </div>
-  
-    <!------------------------------------------------------------------------------------------->
-  
+  </div> 
   <div class="modal fade" id="Modal2">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -106,11 +101,6 @@
       </div>
     </div>
   </div>
-  
-  
-  
-  <!------------------------------------------------------------------------------------------->
-
   <div class="modal fade" id="Modal3">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -147,40 +137,48 @@
 
 
 
-<script>
-var money = 30;
-var money_plus = 1;
-var fight_Antivirus = 0;
-var upgade_hardware_point = 50;
-var upgade_software_point = 100;
-var Lottery_point;
 
+<!-- Some Script -->
+<script>
+var money = 5000;
+var money_plus = 1;
+var fortune_power = 0;
+var upgrade_mining_point = 50;
+var upgrade_fortune_point = 100;
+var Lottery_point;
+var onoff_fortune_alert; 
 
 document.getElementById("money_html").innerHTML = money + " Point";
-document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
-document.getElementById("how_much_hardware_upgrade").innerHTML = "Upgrade Hardware(" + upgade_hardware_point + " Point Require)";
-document.getElementById("how_much_software_upgrade").innerHTML = "Upgrade Software(" + upgade_software_point + " Point Require)";
+document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
+document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
 
 
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
-  document.getElementById("Anti_html").innerHTML = fight_Antivirus + " Power";
 }
 
+function fortune_function(){
+  if (fortune_power > Math.floor(Math.random() * 50)){   
+    money = money + money_plus * 20
+    window.alert(money_plus * 20 + " added!");
+    update()
+   }
+  }
 
 function earnmoney(){
     money = money + money_plus;
+    fortune_function()
     update()
 }
 
 function upgrade_hardware(){
-	if (money >= upgade_hardware_point){
-    	money = money - upgade_hardware_point;
-        upgade_hardware_point = upgade_hardware_point + 75;
+	if (money >= upgrade_mining_point){
+    	money = money - upgrade_mining_point;
+        upgrade_mining_point = upgrade_mining_point + 75;
         money_plus = money_plus + 1;
         update()
-        document.getElementById("how_much_hardware_upgrade").innerHTML = "Upgrade Hardware(" + upgade_hardware_point + " Point Require)";
+        document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
     } else {
     window.alert("Not Enough point for upgade hardware");
     }
@@ -188,12 +186,12 @@ function upgrade_hardware(){
 }
 
 function upgrade_software(){
-	if (money >= upgade_software_point){
-    	money = money - upgade_software_point;
-        upgade_software_point = upgade_software_point + 100;
-        fight_Antivirus = fight_Antivirus + 1;
+	if (money >= upgrade_fortune_point){
+    	money = money - upgrade_fortune_point;
+        upgrade_fortune_point = upgrade_fortune_point + 100;
+        fortune_power = fortune_power + 1;
         update();
-        document.getElementById("how_much_software_upgrade").innerHTML = "Upgrade Software(" + upgade_software_point + " Point Require)";
+        document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
     } else {
     window.alert("Not Enough point for upgade software");
     }
