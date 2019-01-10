@@ -14,7 +14,7 @@ Point can use many way in this game.
 Main Page is constructed by springuser(springer).
 
 ## ALPHA 3
-Lottary service has opened. 3 Type of lottary is there.
+Lottary service has opened. 3 Type of lottary is here.
 
 ## ALPHA 4
 Reconsider project Uno's way. In result, we change game set 
