@@ -35,3 +35,13 @@ Fixed terrible bugs.
 
 ## ALPHA 5 +
 Some command is here!
+
+## ALPHA 5 ++
+```on/off the alert``` is so difficult to do it.
+So we make a button to improve them.
+And fixed some bugs.
+
+## ALPHA 6
+Finally, we perfectly complete ALHPA versions of Project Uno.
+We made all of them in Project Uno's Original package.
+Let see you again at Project Uno's expansion(BETA version)
