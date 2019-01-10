@@ -38,9 +38,10 @@
   <!-- 포인트 획득 -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
-      <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney()"><img src="https://img.icons8.com/color/48/000000/coins.png"></button>
+      <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney();"><img src="https://img.icons8.com/color/48/000000/coins.png"></button>
       <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#Modal1"><img src="https://img.icons8.com/color/48/000000/buy-upgrade.png"></button>
       <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#Modal3"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+      <button type="button" class="btn btn-outline-danger btn-block"  onClick = "Alert_OnOff_function();"><img src="https://img.icons8.com/color/48/000000/error.png"></button>
     </div>
    
     <div id="fight_zone" class="container tab-pane fade"><br>
@@ -153,7 +154,7 @@ var money = 50;
 var money_plus = 1;
 var fortune_power = 0;
 var upgrade_mining_point = 50;
-var upgrade_fortune_point = 100;
+var upgrade_fortune_point = 50;
 var Lottery_point;
 var alert_onoff = 1; 
 
@@ -168,7 +169,7 @@ function update(){
 }
 
 function fortune_function(){
-  if (fortune_power > Math.floor(Math.random() * 100)){   
+  if (fortune_power > Math.floor(Math.random() * 80)){   
     money = money + money_plus * 10
     if (alert_onoff == 1){
     	window.alert(money_plus * 20 + " added!");
@@ -192,7 +193,7 @@ function upgrade_hardware(){
         update()
         document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
     } else {
-    window.alert("Not Enough point for upgade hardware");
+    window.alert("Not Enough point for upgade Mining");
     }
 
 }
@@ -200,12 +201,12 @@ function upgrade_hardware(){
 function upgrade_software(){
 	if (money >= upgrade_fortune_point){
     	money = money - upgrade_fortune_point;
-        upgrade_fortune_point = upgrade_fortune_point + 100;
+        upgrade_fortune_point = upgrade_fortune_point + 75;
         fortune_power = fortune_power + 1;
         update();
         document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
     } else {
-    	window.alert("Not Enough point for upgade software");
+    	window.alert("Not Enough point for upgade Fortune");
     }
 
 }
@@ -245,6 +246,18 @@ function Lottery_expencive(){
     }
   }
 }
+
+
+function Alert_OnOff_function() {
+  if (alert_onoff == 0){
+    alert_onoff = 1
+    window.alert("Alert will show");
+  } else if (alert_onoff == 1){
+    alert_onoff = 0
+    window.alert("Alert will not show");
+  }
+}
+
 function Input_command() {
         if (window.event.keyCode == 13) {
 			    DaTa = $("#input_some_command").val();
