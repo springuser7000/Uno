@@ -4,7 +4,7 @@ Project_UNO
 
 
 
-# Versions
+# ALPHA
 ## ALPHA 1
 Envision clicker game for people who is interest in computers.
 Use point to upgrade hardware(more point in one click).
@@ -37,7 +37,7 @@ Fixed terrible bugs.
 Some command is here!
 
 ## ALPHA 5 ++
-```on/off the alert``` is so difficult to do it.
+on/off the alert is so difficult to do it.
 So we make a button to improve them.
 And fixed some bugs.
 
@@ -45,3 +45,10 @@ And fixed some bugs.
 Finally, we perfectly complete ALHPA versions of Project Uno.
 We made all of them in Project Uno's Original package.
 Let see you again at Project Uno's expansion(BETA version)
+
+#BETA
+## ALPHA - BETA Midway
+We made a box for show Mining / Fortune level.
+And we made Tab for Expansion.
+
+## BETA 1
