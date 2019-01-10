@@ -31,7 +31,8 @@ When clicked, Fortune is activated with a certain probability and gives addition
 If you upgrade "Fortune upgrade", probability is higher.
 
 ## ALPHA 4 +
-Fixed terrible bugs.
+Cuz of some bugs, We have to change version to ALPHA 4.
+And fixed terrible bugs.
 
 ## ALPHA 5 +
 Some command is here!
