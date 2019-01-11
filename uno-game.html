@@ -24,7 +24,7 @@
       <a class="nav-link active" data-toggle="tab" href="#home">Original</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#fight_zone">Expansion</a>
+      <a class="nav-link" data-toggle="tab" href="#More_zone">Expansion</a>
     </li>
   </ul>
 
@@ -40,8 +40,7 @@
     <div id="home" class="container tab-pane active"><br>
         <div class="card bg-dark text-white">
     <div class="card-body text-center">
-      <h3 id = "info" align = "center" class = "display-4
-      "></h3>
+      <h3 id = "info" align = "center"></h3>
     </div>
   </div>
       <br>
@@ -50,7 +49,14 @@
       <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#Modal3"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
       <button type="button" class="btn btn-outline-danger btn-block"  onClick = "Alert_OnOff_function();"><img src="https://img.icons8.com/color/48/000000/error.png"></button>
     </div>
-    <div id="fight_zone" class="container tab-pane fade"><br>
+    <div id="More_zone" class="container tab-pane fade"><br>
+      <div class="card bg-dark text-white">
+        <div class="card-body text-center">
+          <h3 id = "info2" align = "center"></h3>
+        </div>
+      </div>
+      <br>
+      <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal5"><img src="https://img.icons8.com/color/48/000000/small-business.png"></button>
       <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/dusk/40/000000/physics.png"></button>
       
     </div>
@@ -121,18 +127,18 @@
         </div>
         <div class="modal-body">
           <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_cheap()"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
-          <p>10 point require | 0 - 20 return</p>
+          <p  align = "center">10 point require | 0 - 20 return</p>
           <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_midium()"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
-          <p>50 point require | 0 - 150 return</p>
+          <p align = "center">50 point require | 0 - 150 return</p>
           <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expencive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
-          <p>100 point require | 50 - 200 return</p>
+          <p align = "center">100 point require | 50 - 200 return</p>
           
         </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
-                </div>
+    	</div>
     </div>
   </div>
 </div>
@@ -150,8 +156,29 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
         </div>
+    </div>
+  </div>
+</div>
+  <div class="modal fade" id="Modal5">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Shop</h4>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = ""><img src="https://img.icons8.com/color/48/000000/robot.png"></button>
+          <p align = "center">Auto Mining Robot(30sec)</p>
+          
+          
+        </div>
 
-
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -162,28 +189,36 @@
 <!-- Some Script -->
 <script>
 var money = 50;
-var money_plus = 1;
+var money_plus = 1;  
 var fortune_power = 0;
 var upgrade_mining_point = 50;
 var upgrade_fortune_point = 50;
 var Lottery_point;
 var alert_onoff = 1; 
+var A = 0;
+
+while ((A == 5) == false){
+	A = A + 1
+}
+
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
 document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
 document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
+document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
   document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
+  document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 }
 
 function fortune_function(){
   if (fortune_power > Math.floor(Math.random() * 80)){   
-    money = money + money_plus * 10
+    money = money + money_plus * 15
     if (alert_onoff == 1){
-    	window.alert(money_plus * 20 + " added!");
+    	window.alert(money_plus * 15 + " added!");
     }
     
     update()
@@ -294,15 +329,23 @@ function Input_command() {
 function key_down(){
 	if (event.which == 69){
     	//upgrade mining. E key
-        upgrade_hardware()
+        upgrade_hardware();
     } else if (event.which == 82){
     	//upgrade fortune. RR key
-        upgrade_software()
+        upgrade_software();
     } else if (event.which == 81){
     	// Q key
-        Alert_OnOff_function()
+        Alert_OnOff_function();
+    } else if (event.which == 83){
+    	Lottery_cheap();
+    } else if (event.which == 68){
+        Lottery_midium();
+    } else if (event.which == 70){
+    	Lottery_expencive();
     }
 }
+
+
 
 
 
