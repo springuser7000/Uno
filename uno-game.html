@@ -166,8 +166,10 @@
           <h4 class="modal-title">Shop</h4>
         </div>
         <div class="modal-body">
-          <button type="button" class="btn btn-outline-dark btn-block" onClick = ""><img src="https://img.icons8.com/color/48/000000/robot.png"></button>
-          <p align = "center">Auto Mining Robot(30sec)</p>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Wait_and_boom()" data-toggle="tooltip" data-placement="bottom" title="700 Point Require"><img src="https://img.icons8.com/color/48/000000/bomb-with-timer.png"></button>
+          <p align = "center">Money Bomb(returns after 1min with dubble points / 1min after)</p>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "temple()" data-toggle="tooltip" data-placement="bottom" title="1000 Point Require"><img src="https://img.icons8.com/color/48/000000/temple.png"></button>
+          <p align = "center">Lucky Temple's consulting(All of Mining point include Fortune points / 30sec)</p>
           
           
         </div>
@@ -196,11 +198,8 @@ var upgrade_fortune_point = 50;
 var Lottery_point;
 var alert_onoff = 1; 
 var A = 0;
-
-while ((A == 5) == false){
-	A = A + 1
-}
-
+var code_for_admin;
+var Fortune_Master = false;
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
@@ -216,12 +215,16 @@ function update(){
 
 function fortune_function(){
   if (fortune_power > Math.floor(Math.random() * 80)){   
-    money = money + money_plus * 15
+    money = money + money_plus * 15;
     if (alert_onoff == 1){
     	window.alert(money_plus * 15 + " added!");
     }
-    
     update()
+   } else if(Fortune_Master == true){
+     money = money + money_plus * 15
+     if (alert_onoff == 1){
+    	window.alert(money_plus * 15 + " added!");
+    }
    }
   }
 
@@ -323,8 +326,7 @@ function Input_command() {
         }
 }
  
- 
- 
+
  
 function key_down(){
 	if (event.which == 69){
@@ -342,10 +344,49 @@ function key_down(){
         Lottery_midium();
     } else if (event.which == 70){
     	Lottery_expencive();
+    } else if (event.which == 13){
+    	window.alert("DON'T USE ENTER!");
     }
 }
 
 
+function Wait_and_boom(){
+	var Money_re;
+    if (money >= 700){
+        money = money - 700;
+        Money_re = money;
+        money = 0;
+        update();
+        setTimeout(function(){
+            money = money + Money_re * 2;
+            update();
+            window.alert(Money_re * 2 + "Returned!");
+        }, 60000); 
+    } else {
+    	if (alert_onoff == 1){
+    		window.alert("Not Enough point for buy bomb");
+        }
+    }
+}
+
+function temple(){
+    if (money >= 1000){
+        money = money - 1000;
+        update();
+        Fortune_Master = true;
+        setTimeout(function(){
+          Fortune_Master = false;
+        }, 10000); 
+    } else {
+    	if (alert_onoff == 1){
+    		window.alert("Not Enough point for conversation");
+        }
+    }
+}
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
 
 
 
