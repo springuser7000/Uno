@@ -57,12 +57,12 @@ Deled some commend too.
 Fixed some bugs.
 
 ## BETA 2
-Added Money bomb.
+Added ```Money bomb.```
 After you bought it and wait 1min, it gives double points compared to before.
 You can buy money bomb at expansion - shop with 700 Points.
 
 ## BETA 3
-Added Lucky Temple's consulting.
+Added ```Lucky Temple's consulting.```
 Item makes upgrade performance of fortune.(You must upgrade fortune level before use this item.)
 Maintain 30sec.
 You can buy money bomb at expansion - shop with 1000 Points.
