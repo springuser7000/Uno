@@ -1,44 +1,197 @@
+<!DOCTYPE html>
 <html>
+
+
+
 <head>
-<title>Project Uno</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <title>Uno</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onKeydown = "key_down()">
+<br>
+
+<div class="container">
+  <h2 id ="money_html" class="display-2"></h2>
+  <br>
+  <!-- Menu -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">Original</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#More_zone">Expansion</a>
+    </li>
+  </ul>
 
 
-<div class = "jumbotron jumbotron-fluid">
-	<div class = "container">
-        <h1 class = "display-3">Project Uno</h1>        
-	</div>
-</div>
 
 
-<div align = "center">
-	<div align = "center">
-    	<h3 class = "display-4">PLAY: <a href = "uno-game.html"><img src="https://img.icons8.com/color/48/000000/controller.png"></a></h2>
 
+
+<!-- Some Tabs-->
+
+  <!-- 포인트 획득 -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+        <div class="card bg-dark text-white">
+    <div class="card-body text-center">
+      <h3 id = "info" align = "center"></h3>
     </div>
+  </div>
+      <br>
+      <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney();"><img src="https://img.icons8.com/color/48/000000/coins.png"></button>
+      <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#Modal1"><img src="https://img.icons8.com/color/48/000000/buy-upgrade.png"></button>
+      <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#Modal3"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+      <button type="button" class="btn btn-outline-danger btn-block"  onClick = "Alert_OnOff_function();"><img src="https://img.icons8.com/color/48/000000/error.png"></button>
+    </div>
+    <div id="More_zone" class="container tab-pane fade"><br>
+      <div class="card bg-dark text-white">
+        <div class="card-body text-center">
+          <h3 id = "info2" align = "center"></h3>
+        </div>
+      </div>
+      <br>
+      <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal5"><img src="https://img.icons8.com/color/48/000000/small-business.png"></button>
+      <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/dusk/40/000000/physics.png"></button>
+      
+    </div>
+  </div>
 </div>
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
 
-<div align = "center">
-    <p>If you wat to experience full Performance in this website, Use chrome</p>
-    <p><a href="https://icons8.com">Icon pack by Icons8</a></p>
+
+
+
+<!-- Some Modals-->
+
+
+
+  <div class="modal fade" id="Modal1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Mining / Fortune Upgrade</h4>
+        </div>
+
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_mining_upgrade">upgrade mining</button>
+          <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_software()" id = "how_much_fortune_upgrade">upgrade Fortune</button>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div> 
+  <div class="modal fade" id="Modal2">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Lab</h4>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-success btn-block">Reserach 1</button>
+          <button type="button" class="btn btn-outline-success btn-block">Reserach 2</button>
+          <button type="button" class="btn btn-outline-success btn-block">Reserach 3</button>
+          <button type="button" class="btn btn-outline-success btn-block">Reserach 4</button>
+          <button type="button" class="btn btn-outline-success btn-block">Reserach 5</button>
+        </div>
+        
+        
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Modal3">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Lottery</h4>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_cheap()"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
+          <p  align = "center">10 point require | 0 - 20 return</p>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_midium()"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
+          <p align = "center">50 point require | 0 - 150 return</p>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expencive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+          <p align = "center">100 point require | 50 - 200 return</p>
+          
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+    	</div>
+    </div>
+  </div>
 </div>
+  <div class="modal fade" id="Modal4">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Command</h4>
+        </div>
+        <div class="modal-body">
+    <div class="form-group has-success has-feedback">
+        <input type="text" class="form-control" id="input_some_command" onkeyup = "Input_command();">
+    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+  <div class="modal fade" id="Modal5">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Shop</h4>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Wait_and_boom()" data-toggle="tooltip" data-placement="bottom" title="700 Point Require"><img src="https://img.icons8.com/color/48/000000/bomb-with-timer.png"></button>
+          <p align = "center">Money Bomb(returns after 1min with dubble points / 1min after)</p>
+          <button type="button" class="btn btn-outline-dark btn-block" onClick = "temple()" data-toggle="tooltip" data-placement="bottom" title="1000 Point Require"><img src="https://img.icons8.com/color/48/000000/temple.png"></button>
+          <p align = "center">Lucky Temple's consulting(All of Mining point include Fortune points / 30sec)</p>
+          
+          
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Some Script -->
+<script src = "game_loop.js"></script>
+
+
 
 </body>
 </html>
