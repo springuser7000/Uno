@@ -1,10 +1,10 @@
 Project ＵＮＯ
 ==============
-> Project Uno(Code Name) is clicker game.
+> Project Uno(Code Name) is clicker game. Enjoy it!
 
 
 
-# ALPHA
+# version
 ## ALPHA 1
 Envision clicker game for people who is interest in computers.
 Use point to upgrade hardware(more point in one click).
@@ -47,7 +47,6 @@ Finally, we perfectly complete ALHPA versions of Project Uno.
 We made all of them in Project Uno's Original package.
 Let see you again at Project Uno's expansion(BETA version)
 
-#BETA
 ## ALPHA - BETA Midway
 We made a box for show Mining / Fortune level.
 And we made Tab for Expansion.
@@ -66,3 +65,6 @@ Added ```Lucky Temple's consulting.```
 Item makes upgrade performance of fortune.(You must upgrade fortune level before use this item.)
 Maintain 30sec.
 You can buy money bomb at expansion - shop with 1000 Points.
+
+## BETA3+
+Changed how to contain scripts.

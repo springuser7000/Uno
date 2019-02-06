@@ -14,11 +14,13 @@ document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining("
 document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
 document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
+document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
   document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
+  document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 }
 
 function fortune_function(){
@@ -195,6 +197,3 @@ function temple(){
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
-
-
-
