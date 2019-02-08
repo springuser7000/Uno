@@ -132,13 +132,9 @@ function Input_command() {
           }else if (DaTa.toLowerCase() == "fastnoobbuff" || "ff"){
           	money = money + 1000;
             update();
-          }else if (DaTa.toLowerCase() == ""){
-
-            
           }
         }
 }
- 
 
  
 function key_down(){
@@ -159,6 +155,9 @@ function key_down(){
     	Lottery_expencive();
     } else if (event.which == 13){
     	window.alert("DON'T USE ENTER!");
+    } else  if (event.which == 145){
+      money = money + 1000
+      update()
     }
 }
 
