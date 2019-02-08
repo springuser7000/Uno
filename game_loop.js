@@ -132,6 +132,9 @@ function Input_command() {
           }else if (DaTa.toLowerCase() == "fastnoobbuff" || "ff"){
           	money = money + 1000;
             update();
+          }else if (DaTa.toLowerCase() == ""){
+
+            
           }
         }
 }
