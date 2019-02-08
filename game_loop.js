@@ -8,6 +8,8 @@ var alert_onoff = 1;
 var A = 0;
 var code_for_admin;
 var Fortune_Master = false;
+var seojuncoin = 0;
+var seojuncoin_how_many = 0;
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
@@ -195,6 +197,27 @@ function temple(){
         }
     }
 }
+
+function reload_seojuncoin() {
+  asdf
+}
+
+function buy_seojuncoin(){
+  asdf
+}
+
+function sell_seojuncoin(){
+  asdf
+}
+
+
+
+
+
+
+
+
+
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
