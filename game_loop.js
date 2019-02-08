@@ -164,8 +164,8 @@ function key_down(){
 
 function Wait_and_boom(){
 	var Money_re;
-    if (money >= 700){
-        money = money - 700;
+    if (money >= 3000){
+        money = money - 3000;
         Money_re = money;
         money = 0;
         update();

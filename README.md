@@ -68,3 +68,8 @@ You can buy money bomb at expansion - shop with 1000 Points.
 
 ## BETA3+
 Changed how to contain scripts.
+
+## BETA3++
+Changed background color.
+
+## BETA
