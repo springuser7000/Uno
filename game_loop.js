@@ -9,7 +9,11 @@ var A = 0;
 var code_for_admin;
 var Fortune_Master = false;
 var seojuncoin = 0;
+//갯수
 var seojuncoin_how_many = 0;
+//횟수
+var seojuncoin_how_much = 0;
+//시세
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
@@ -23,6 +27,7 @@ function update(){
   document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
+  document.getElementById("invest").innerHTML = seojuncoin_how_much + "points per coin"
 }
 
 function fortune_function(){
@@ -160,6 +165,8 @@ function key_down(){
     } else  if (event.which == 145){
       money = money + 1000
       update()
+    } else if (event.which == 25){
+      window.alert("Made by leeseojun")
     }
 }
 
@@ -199,21 +206,37 @@ function temple(){
 }
 
 function reload_seojuncoin() {
-  asdf
+  if (seojuncoin_how_many == 3) {
+    seojuncoin_how_many = 0
+    seojuncoin_how_much = Math.floor(Math.random()) * 100;
+    update()
+  }
 }
 
 function buy_seojuncoin(){
-  asdf
+  money = money - seojuncoin_how_much
+  seojuncoin = seojuncoin + 1
+  seojuncoin_how_many = seojuncoin_how_many + 1
+  reload_seojuncoin()
+  update()
 }
 
 function sell_seojuncoin(){
-  asdf
+  money = money + seojuncoin_how_much
+  seojuncoin = seojuncoin - 1
+  seojuncoin_how_many = seojuncoin_how_many + 1
+  reload_seojuncoin()
+  update()
 }
 
 
 
 
 
+
+//갑자기 궁금한 것들 써놓는 곳
+//리다이렉트 하는 법
+//window.location.href = 'https://www.naver.com/';
 
 
 

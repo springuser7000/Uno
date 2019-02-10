@@ -72,4 +72,8 @@ Changed how to contain scripts.
 ## BETA3++
 Changed background color.
 
-## BETA
+## BETA4
+Deleted lab service.
+Add seojuncoin service.
+Seojuncoin is another purchasement(< - > point) in game.
+Inspired by Uno's develover, Seojun Lee.
