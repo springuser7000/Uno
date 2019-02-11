@@ -229,13 +229,13 @@ function buy_seojuncoin(){
 
 function sell_seojuncoin(){
   if (seojuncoin == 0){
+    window.alert("You don't have any seojuncoins.")
+  } else{
     money = money + seojuncoin_how_much
     seojuncoin = seojuncoin - 1
     seojuncoin_how_many = seojuncoin_how_many + 1
     reload_seojuncoin()
     update()
-  } else{
-    window.alert("You don't have any seojuncoins.")
   }
 }
 
