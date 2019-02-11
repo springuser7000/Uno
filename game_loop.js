@@ -22,6 +22,10 @@ document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fo
 document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 seojuncoin_how_much = Math.floor(Math.random()) * 100;
+document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
+
+
+
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
