@@ -172,7 +172,7 @@ function key_down(){
       money = money + 1000
       update()
     } else if (event.which == 25){
-      window.alert("Made by leeseojun")
+      window.alert("Made by leeseojun");
     }
 }
 
@@ -213,7 +213,7 @@ function temple(){
 
 function reload_seojuncoin() {
   if (seojuncoin_how_many == 3) {
-    seojuncoin_how_many = 0
+    seojuncoin_how_many = 0;
     seojuncoin_how_much = Math.floor(Math.random() * 100);
     update()
   }
@@ -223,11 +223,11 @@ function buy_seojuncoin(){
   if (money <= 0){
     window.alert("you don't have money.")
   } else{
-    money = money - seojuncoin_how_much
-    seojuncoin = seojuncoin + 1
+    money = money - seojuncoin_how_much;
+    seojuncoin = seojuncoin + 1;
     seojuncoin_how_many = seojuncoin_how_many + 1
-    reload_seojuncoin()
-    update() 
+    reload_seojuncoin();
+    update();
   }
 }
 
@@ -235,11 +235,11 @@ function sell_seojuncoin(){
   if (seojuncoin == 0){
     window.alert("You don't have any seojuncoins.")
   } else {
-    money = money + seojuncoin_how_much
-    seojuncoin = seojuncoin - 1
+    money = money + seojuncoin_how_much;
+    seojuncoin = seojuncoin - 1;
     seojuncoin_how_many = seojuncoin_how_many + 1
-    reload_seojuncoin()
-    update()
+    reload_seojuncoin();
+    update();
   }
 }
 
