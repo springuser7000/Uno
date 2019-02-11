@@ -173,6 +173,13 @@ function key_down(){
       update()
     } else if (event.which == 25){
       window.alert("Made by leeseojun");
+    } else if (event.which == 73){
+      reload_seojuncoin()
+      window.alert( + "")
+    } else if (event.which == 79){
+      buy_seojuncoin()
+    } else if (event.which == 80){
+      sell_seojuncoin()
     }
 }
 
