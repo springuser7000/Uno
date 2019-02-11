@@ -214,7 +214,7 @@ function temple(){
 function reload_seojuncoin() {
   if (seojuncoin_how_many == 3) {
     seojuncoin_how_many = 0
-    seojuncoin_how_much = Math.floor(Math.random()) * 100;
+    seojuncoin_how_much = Math.floor(Math.random() * 100);
     update()
   }
 }
