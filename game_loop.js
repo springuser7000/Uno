@@ -21,8 +21,9 @@ document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune
 document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
-seojuncoin_how_much = Math.floor(Math.random()) * 100;
+seojuncoin_how_much = Math.floor(Math.random() * 100);
 document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
+update()
 
 
 
@@ -227,11 +228,15 @@ function buy_seojuncoin(){
 }
 
 function sell_seojuncoin(){
-  money = money + seojuncoin_how_much
-  seojuncoin = seojuncoin - 1
-  seojuncoin_how_many = seojuncoin_how_many + 1
-  reload_seojuncoin()
-  update()
+  if (seojuncoin == 0){
+    money = money + seojuncoin_how_much
+    seojuncoin = seojuncoin - 1
+    seojuncoin_how_many = seojuncoin_how_many + 1
+    reload_seojuncoin()
+    update()
+  } else{
+    window.alert("You don't have any seojuncoins.")
+  }
 }
 
 
