@@ -175,7 +175,7 @@ function key_down(){
       window.alert("Made by leeseojun");
     } else if (event.which == 73){
       reload_seojuncoin()
-      window.alert( + "")
+      window.alert(seojuncoin_how_much + " points per coin.")
     } else if (event.which == 79){
       buy_seojuncoin()
     } else if (event.which == 80){
