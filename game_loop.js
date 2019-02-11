@@ -21,13 +21,14 @@ document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune
 document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
+seojuncoin_how_much = Math.floor(Math.random()) * 100;
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
   document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
-  document.getElementById("invest").innerHTML = seojuncoin_how_much + "points per coin"
+  document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
 }
 
 function fortune_function(){
