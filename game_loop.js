@@ -220,17 +220,21 @@ function reload_seojuncoin() {
 }
 
 function buy_seojuncoin(){
-  money = money - seojuncoin_how_much
-  seojuncoin = seojuncoin + 1
-  seojuncoin_how_many = seojuncoin_how_many + 1
-  reload_seojuncoin()
-  update()
+  if (money <= 0){
+    window.alert("you don't have money.")
+  } else{
+    money = money - seojuncoin_how_much
+    seojuncoin = seojuncoin + 1
+    seojuncoin_how_many = seojuncoin_how_many + 1
+    reload_seojuncoin()
+    update() 
+  }
 }
 
 function sell_seojuncoin(){
   if (seojuncoin == 0){
     window.alert("You don't have any seojuncoins.")
-  } else{
+  } else {
     money = money + seojuncoin_how_much
     seojuncoin = seojuncoin - 1
     seojuncoin_how_many = seojuncoin_how_many + 1
