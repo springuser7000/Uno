@@ -21,7 +21,7 @@ document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune
 document.getElementById("info").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
-seojuncoin_how_much = Math.floor(Math.random() * 100);
+seojuncoin_how_much = Math.floor(Math.random() * 10000);
 document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
 update()
 
@@ -220,7 +220,7 @@ function temple(){
 
 function reload_seojuncoin() {
   seojuncoin_how_many = 0;
-  seojuncoin_how_much = Math.floor(Math.random() * 100);
+  seojuncoin_how_much = Math.floor(Math.random() * 10000);
   update()
 }
 
