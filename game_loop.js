@@ -219,7 +219,6 @@ function temple(){
 }
 
 function reload_seojuncoin() {
-  seojuncoin_how_many = 0;
   seojuncoin_how_much = Math.floor(Math.random() * 10000);
   update()
 }
@@ -230,7 +229,6 @@ function buy_seojuncoin(){
   } else {
     money = money - seojuncoin_how_much;
     seojuncoin = seojuncoin + 1;
-    seojuncoin_how_many = seojuncoin_how_many + 1
     update();
   }
 }
@@ -241,7 +239,6 @@ function sell_seojuncoin(){
   } else {
     money = money + seojuncoin_how_much;
     seojuncoin = seojuncoin - 1;
-    seojuncoin_how_many = seojuncoin_how_many + 1
     update();
   }
 }
