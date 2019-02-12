@@ -225,9 +225,9 @@ function reload_seojuncoin() {
 }
 
 function buy_seojuncoin(){
-  if (money <= 0){
+  if (money - seojuncoin_how_much <= 0){
     window.alert("you don't have money.")
-  } else{
+  } else {
     money = money - seojuncoin_how_much;
     seojuncoin = seojuncoin + 1;
     seojuncoin_how_many = seojuncoin_how_many + 1
