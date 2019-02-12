@@ -231,7 +231,6 @@ function buy_seojuncoin(){
     money = money - seojuncoin_how_much;
     seojuncoin = seojuncoin + 1;
     seojuncoin_how_many = seojuncoin_how_many + 1
-    reload_seojuncoin();
     update();
   }
 }
@@ -243,7 +242,6 @@ function sell_seojuncoin(){
     money = money + seojuncoin_how_much;
     seojuncoin = seojuncoin - 1;
     seojuncoin_how_many = seojuncoin_how_many + 1
-    reload_seojuncoin();
     update();
   }
 }
