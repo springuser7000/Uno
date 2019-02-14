@@ -1,4 +1,5 @@
 // Copyright 2019 springuser700 all rights reserved.
+
 var money = 50;
 var money_plus = 1;  
 var fortune_power = 0;
@@ -10,8 +11,12 @@ var A = 0;
 var code_for_admin;
 var Fortune_Master = false;
 var seojuncoin = 0;
+//갯수
 var seojuncoin_how_many = 0;
+//횟수
 var seojuncoin_how_much = 0;
+//시세
+
 
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
@@ -240,6 +245,7 @@ function sell_seojuncoin(){
     update();
   }
 }
+
 
 
 $(document).ready(function(){
