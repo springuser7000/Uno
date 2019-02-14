@@ -77,3 +77,10 @@ Deleted lab service.
 Add seojuncoin service.
 Seojuncoin is another purchasement(< - > point) in game.
 Inspired by Uno's develover, Seojun Lee.
+
+## OPENED - 1.0
+Project Uno opened finally.
+You can use this code with copyright sign for me.
+See you later at another project.
+
+Copyright 2019 springuser700 all rights reserved.

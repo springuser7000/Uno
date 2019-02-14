@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- Copyright 2019 springuser700 all rights reserved. -->
 <head>
   <title>Uno</title>
   <meta charset="utf-8">
@@ -20,10 +21,6 @@
       background-color: #ffece5;
       color: gray
     }
-    #Gotab3 {
-      background-color: #ffece5;
-      color: gray
-    }
 
     </style>
 
@@ -31,10 +28,17 @@
 <body onKeydown = "key_down()">
 <br>
 
+
+
+
+
+
+
+
+<!--some Tabs.-->
 <div class="container">
   <h2 id ="money_html" class="display-2"></h2>
   <br>
-  <!-- Menu -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#home" id = "Gotab1">Original</a>
@@ -42,15 +46,7 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#More_zone" id = "Gotab2">Expansion</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#Computer_zone" id = "Gotab3">Computer</a>
-      </li>
   </ul>
-
-
-<!-- Some Tabs-->
-
-  <!-- 포인트 획득 -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
         <div class="card bg-dark text-white">
@@ -75,16 +71,6 @@
       <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/color/48/000000/bullish.png"></button>
       
     </div>
-    <div id="Computer_zone" class="container tab-pane fade"><br>
-      <div class="card bg-dark text-white">
-        <div class="card-body text-center">
-          <h3 id = "info3" align = "center"></h3>
-        </div>
-      </div>
-      <br>
-
-      
-    </div>
   </div>
 </div>
 
@@ -98,8 +84,6 @@
 
 
 <!-- Some Modals-->
-
-
 
   <div class="modal fade" id="Modal1">
     <div class="modal-dialog modal-dialog-centered">
@@ -206,35 +190,6 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="Modal_com1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Buy computer</h4>
-        </div>
-        <div class="modal-body">
-          <button type="button" class="btn btn-outline-dark btn-block" onClick = "Wait_and_boom()" data-toggle="tooltip" data-placement="bottom" title="700 Point Require"><img src="https://img.icons8.com/color/48/000000/bomb-with-timer.png"></button>
-          <p align = "center">Money Bomb(returns after 1min with dubble points / 1min after)</p>
-          <button type="button" class="btn btn-outline-dark btn-block" onClick = "temple()" data-toggle="tooltip" data-placement="bottom" title="1000 Point Require"><img src="https://img.icons8.com/color/48/000000/temple.png"></button>
-          <p align = "center">Lucky Temple's consulting(All of Mining point include Fortune points / 30sec)</p>
-          
-          
-        </div>
-
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
-        </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
 
 <!-- Some Script -->
 <script src = "game_loop.js"></script>
