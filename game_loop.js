@@ -195,8 +195,8 @@ function key_down(){
 
 function Wait_and_boom(){
 	var Money_re;
-    if (money >= 3000){
-        money = money - 3000;
+    if (money >= 10000){
+        money = money - 10000;
         Money_re = money;
         money = 0;
         update();
@@ -228,6 +228,9 @@ function temple(){
 }
 function reload_seojuncoin() {
   seojuncoin_how_much = Math.floor(Math.random() * 10000);
+  while (false == Boolean(seojuncoin_how_much > 7000)){
+    seojuncoin_how_much = Math.floor(Math.random() * 10000);
+  }
   update()
 }
 
