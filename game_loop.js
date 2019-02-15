@@ -226,7 +226,6 @@ function temple(){
         }
     }
 }
-
 function reload_seojuncoin() {
   seojuncoin_how_much = Math.floor(Math.random() * 10000);
   update()
@@ -257,7 +256,7 @@ function buy_all_seojuncoin(){
   if (money - seojuncoin_how_much <= 0){
     window.alert("you don't have money.")
   } else {
-    Math.round(money / seojuncoin_how_much) - 1;
+    var1 = Math.floor(money / seojuncoin_how_much);
     money = money - seojuncoin_how_much * var1;
     seojuncoin = seojuncoin + var1;
     update();
