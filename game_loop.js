@@ -178,11 +178,17 @@ function key_down(){
       window.alert("Made by leeseojun");
     } else if (event.which == 73){
       reload_seojuncoin()
-      window.alert(seojuncoin_how_much + " points per coin.")
+      if (alert_onoff == 1){
+        window.alert(seojuncoin_how_much + " points per coin.")
+      }
     } else if (event.which == 79){
       buy_seojuncoin()
     } else if (event.which == 80){
       sell_seojuncoin()
+    } else if (event.which == 219){
+      buy_all_seojuncoin()
+    } else if (event.which == 221){
+      sell_all_seojuncoin()
     }
 }
 
@@ -246,6 +252,27 @@ function sell_seojuncoin(){
   }
 }
 
+function buy_all_seojuncoin(){
+  var var1;
+  if (money - seojuncoin_how_much <= 0){
+    window.alert("you don't have money.")
+  } else {
+    Math.round(money / seojuncoin_how_much) - 1;
+    money = money - seojuncoin_how_much * var1;
+    seojuncoin = seojuncoin + var1;
+    update();
+  }
+}
+
+function sell_all_seojuncoin(){
+  if (seojuncoin == 0){
+    window.alert("You don't have any seojuncoins.")
+  } else {
+    money = seojuncoin * seojuncoin_how_much;
+    seojuncoin = 0;
+    update();
+  }
+}
 
 
 $(document).ready(function(){
