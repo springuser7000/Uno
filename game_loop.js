@@ -12,7 +12,7 @@ var code_for_admin;
 var Fortune_Master = false;
 var seojuncoin = 0;
 var buy_computer_bool = false;
-var computer_cpu_level = 20000;
+var computer_cpu_level = 150;
 var computer_cpu_level_upgrade = 200;
 var computer_ram_level = 1;
 var computer_ram_level_upgrade = 200;
@@ -42,9 +42,6 @@ document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + f
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 seojuncoin_how_much = Math.floor(Math.random() * 10000);
 document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
-document.getElementById("up_CPU").title = computer_cpu_level_upgrade + " Point require";
-document.getElementById("up_RAM").title = computer_ram_level_upgrade + " Point require";
-document.getElementById("up_power").title = computer_power_level_upgrade + " Point require";
 update()
 
 
@@ -56,9 +53,6 @@ function update(){
   document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
-  document.getElementById("up_CPU").title = computer_cpu_level_upgrade + " Point require";
-  document.getElementById("up_RAM").title = computer_ram_level_upgrade + " Point require";
-  document.getElementById("up_power").title = computer_power_level_upgrade + " Point require";
 }
 
 function fortune_function(){
@@ -192,12 +186,8 @@ function key_down(){
     } else if (event.which == 70){
     	Lottery_expencive();
     } else if (event.which == 13){
-      money = money + 1000
-      update()
-    	window.alert("DON'T USE ENTER!");
+		window.alert("DON'T USE ENTER!");
     } else  if (event.which == 145){
-      computer_cpu_level = computer_cpu_level - 1000
-      window.alert(computer_cpu_level)
       money = money + 1000
       update()
     } else if (event.which == 25){
@@ -332,72 +322,25 @@ function check_computer(){
   if (buy_computer_bool == true){
     money = money + computer_ram_level;
     update()
-    // if (computer_power_level > Math.floor(Math.random() * 60)){
-    //   make_computer_error();
-    //   // asdf
-    // }
-    //서준 바로가기 1
   }
 }
 
-function upgrade_CPU(){
-  if (money >= computer_cpu_level_upgrade){
-    if (false == (computer_cpu_level == 1000)){
-      money = money - computer_cpu_level_upgrade
-      computer_cpu_level_upgrade = computer_cpu_level_upgrade + 125;
-      computer_cpu_level = computer_cpu_level - 1000;
-      update()
-    } else{
-      if (alert_onoff == 1){
-        window.alert("You already did ALL upgrades.");
-      }
-    }
-  } else{
-    if (alert_onoff == 1){
-      window.alert("Not enough point to upgrade CPU");
-    }
-  }
-}
-
-function upgrade_RAM(){
-  if (money >= computer_ram_level){
-    computer_ram_level_upgrade = computer_ram_level_upgrade + 125;
-    money = money - computer_ram_level_upgrade
-    computer_ram_level = computer_ram_level + 1
-    update()
-  } else {
-    if (alert_onoff == 1){
-      window.alert("Not enough point to upgrade RAM")
-    }
-  }
-}
-
-// function upgrade_power(){
-//   if (money >= computer_power_level_upgrade){
-//     money = money - computer_power_level_upgrade;
-//     computer_power_level_upgrade = computer_power_level_upgrade - 1;
-//     update()
-//   } else{
-//     if (alert_onoff == 1){
-//       window.alert("Not enough point to upgrade power");
-//     }
-//   }
-// }
 
 
-// function make_computer_error(){
-//   text = ""
-//   for( var i=0; i < 7; i++ ){
-//     text += possible.charAt(Math.floor(Math.random() * possible.length));
-//   }
-//   var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
-//   while (false == (text == error)){
-//     var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
-//   }
-// }
 
-//computer_cpu_level; - 순환 수
-//computer_ram_level; - 한 번 얻는 포인트
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
