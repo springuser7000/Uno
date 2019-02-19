@@ -320,7 +320,8 @@ function buy_computer(){
 function check_computer(){
   if (buy_computer_bool == true){
     money = money + computer_ram_level;
-    if (computer_power_level > Math.floor(Math.random() * 80)){
+    update()
+    if (computer_power_level > Math.floor(Math.random() * 60)){
       make_computer_error();
       // asdf
     }
