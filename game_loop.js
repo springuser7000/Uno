@@ -378,9 +378,9 @@ function make_computer_error(){
   for( var i=0; i < 7; i++ ){
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
-  var error = prompt("Your computer has breaked. Enter this code to fix it.");
+  var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
   while (false == (text == error)){
-    var error = prompt("Your computer has breaked. Enter this code to fix it.");
+    var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
   }
 }
 
