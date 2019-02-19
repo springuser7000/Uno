@@ -306,12 +306,12 @@ function buy_computer(){
       money = money - 400;
       update();
       buy_computer_bool = true;
-    } else{
+    } else {
       if (alert_onoff == 1){
         window.alert("Not enough points to buy computer")
       }
     }
-  } else{
+  } else {
     if (alert_onoff == 1){
       window.alert("You already buy computer.")
     }
