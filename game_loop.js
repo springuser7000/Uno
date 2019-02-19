@@ -364,6 +364,7 @@ function upgrade_power(){
   if (money >= computer_power_level_upgrade){
     money = money - computer_power_level_upgrade;
     computer_power_level_upgrade = computer_power_level_upgrade - 1;
+    update()
   } else{
     if (alert_onoff == 1){
       window.alert("Not enough point to upgrade power");
