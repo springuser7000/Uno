@@ -28,6 +28,12 @@ var seojuncoin_how_much = 0;
 //시세
 var one;
 
+
+
+
+
+
+
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
 document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
@@ -42,7 +48,7 @@ document.getElementById("up_power").title = computer_power_level_upgrade + " Poi
 update()
 
 
-
+one = setInterval(function(){ check_computer(); }, computer_cpu_level);
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
