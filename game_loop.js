@@ -326,14 +326,16 @@ function buy_computer(){
     }
   }
 }
+
+
 function check_computer(){
   if (buy_computer_bool == true){
     money = money + computer_ram_level;
     update()
-    if (computer_power_level > Math.floor(Math.random() * 60)){
-      make_computer_error();
-      // asdf
-    }
+    // if (computer_power_level > Math.floor(Math.random() * 60)){
+    //   make_computer_error();
+    //   // asdf
+    // }
     //서준 바로가기 1
   }
 }
@@ -370,34 +372,32 @@ function upgrade_RAM(){
   }
 }
 
-function upgrade_power(){
-  if (money >= computer_power_level_upgrade){
-    money = money - computer_power_level_upgrade;
-    computer_power_level_upgrade = computer_power_level_upgrade - 1;
-    update()
-  } else{
-    if (alert_onoff == 1){
-      window.alert("Not enough point to upgrade power");
-    }
-  }
-}
+// function upgrade_power(){
+//   if (money >= computer_power_level_upgrade){
+//     money = money - computer_power_level_upgrade;
+//     computer_power_level_upgrade = computer_power_level_upgrade - 1;
+//     update()
+//   } else{
+//     if (alert_onoff == 1){
+//       window.alert("Not enough point to upgrade power");
+//     }
+//   }
+// }
 
 
-function make_computer_error(){
-  text = ""
-  for( var i=0; i < 7; i++ ){
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
-  while (false == (text == error)){
-    var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
-  }
-}
+// function make_computer_error(){
+//   text = ""
+//   for( var i=0; i < 7; i++ ){
+//     text += possible.charAt(Math.floor(Math.random() * possible.length));
+//   }
+//   var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
+//   while (false == (text == error)){
+//     var error = prompt("Your computer has breaked. Enter this code to fix it: " + text);
+//   }
+// }
 
 //computer_cpu_level; - 순환 수
 //computer_ram_level; - 한 번 얻는 포인트
-//computer_power_level; - 고장 관련
-
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
