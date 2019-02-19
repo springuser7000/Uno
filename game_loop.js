@@ -11,14 +11,12 @@ var A = 0;
 var code_for_admin;
 var Fortune_Master = false;
 var seojuncoin = 0;
-var buy_computer_bool = false;
-var computer_cpu_level = 150;
-var computer_cpu_level_upgrade = 200;
-var computer_ram_level = 1;
-var computer_ram_level_upgrade = 200;
-var computer_power_level = 50;
-var computer_power_level_upgrade = 200;
-//var computer_;
+var buy_robot_bool = false;
+var robot_speed = 1200;
+var robot_speed_money = 200;
+var robot_plus = 1;
+var robot_plus_money = 200;
+//var robot_;
 var text = "";
 var possible = "밝뷁봙웱옭숽옳덣꽑꿹낈쏤뢁뷇홝홖읡읞";
 //갯수
@@ -42,10 +40,13 @@ document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + f
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 seojuncoin_how_much = Math.floor(Math.random() * 10000);
 document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
+
+document.getElementById("add_robot_id").innerHTML = robot_plus_money + " points require"
+document.getElementById("speed_robot_id").innerHTML = robot_speed_money + " points require"
 update()
 
 
-one = setInterval(function(){ check_computer(); }, computer_cpu_level);
+one = setInterval(function(){ check_robot(); }, robot_speed);
 
 function update(){
   document.getElementById("money_html").innerHTML = money + " Point";
@@ -298,35 +299,50 @@ function sell_all_seojuncoin(){
 
 
 
-//computer function
-function buy_computer(){
-  if (buy_computer_bool == false){
-    if (money >= 400){
-      money = money - 400;
+//robot function
+function buy_robot(){
+  if (buy_robot_bool == false){
+    if (money >= 5000){
+      money = money - 5000;
       update();
-      buy_computer_bool = true;
+      buy_robot_bool = true;
     } else {
       if (alert_onoff == 1){
-        window.alert("Not enough points to buy computer")
+        window.alert("Not enough points to buy robot")
       }
     }
   } else {
     if (alert_onoff == 1){
-      window.alert("You already buy computer.")
+      window.alert("You already buy robot.")
     }
   }
 }
 
 
-function check_computer(){
-  if (buy_computer_bool == true){
-    money = money + computer_ram_level;
-    update()
+function check_robot(){
+  if (buy_robot_bool == true){
+    money = money + robot_plus;
+    update();
   }
 }
 
+function upgrade_robot_speed(){
+  if(false == (0 > point - robot_speed_money)){
+    point = point - robot_speed_money;
+    robot_speed_money += 325;
+    robot_speed -= 50;
+    update();
+  }
+}
 
-
+function upgrade_robot_add(){
+  if (false == (0 > point - robot_plus_money)){
+    point = point - robot_plus_money;
+    robot_plus_money += 325;
+    robot_plus += 1;
+    update();
+  }
+}
 
 
 
