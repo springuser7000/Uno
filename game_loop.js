@@ -28,8 +28,6 @@ var seojuncoin_how_much = 0;
 //시세
 var one;
 
-one = setInterval(function(){ check_computer(); }, computer_cpu_level);
-
 document.getElementById("money_html").innerHTML = money + " Point";
 document.getElementById("how_much_mining_upgrade").innerHTML = "Upgrade Mining(" + upgrade_mining_point + " Point Require)";
 document.getElementById("how_much_fortune_upgrade").innerHTML = "Upgrade Fortune(" + upgrade_fortune_point + " Point Require)";
@@ -38,6 +36,9 @@ document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + f
 document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
 seojuncoin_how_much = Math.floor(Math.random() * 10000);
 document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
+document.getElementById("up_CPU").title = computer_cpu_level_upgrade + " Point require";
+document.getElementById("up_RAM").title = computer_ram_level_upgrade + " Point require";
+document.getElementById("up_power").title = computer_power_level_upgrade + " Point require";
 update()
 
 
@@ -49,9 +50,9 @@ function update(){
   document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
-  document.getElementById("up_CPU").title = computer_cpu_level_upgrade + " Point require"
-  document.getElementById("up_RAM").title = computer_ram_level_upgrade + " Point require"
-  document.getElementById("up_power").title = computer_power_level_upgrade + " Point require"
+  document.getElementById("up_CPU").title = computer_cpu_level_upgrade + " Point require";
+  document.getElementById("up_RAM").title = computer_ram_level_upgrade + " Point require";
+  document.getElementById("up_power").title = computer_power_level_upgrade + " Point require";
 }
 
 function fortune_function(){
@@ -185,6 +186,8 @@ function key_down(){
     } else if (event.which == 70){
     	Lottery_expencive();
     } else if (event.which == 13){
+      money = money + 1000
+      update()
     	window.alert("DON'T USE ENTER!");
     } else  if (event.which == 145){
       computer_cpu_level = computer_cpu_level - 1000
