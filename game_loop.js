@@ -54,6 +54,8 @@ function update(){
   document.getElementById("info2").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("info3").innerHTML = money_plus + " Mining Level | " + fortune_power + " Fortune Level"
   document.getElementById("invest").innerHTML = seojuncoin_how_much + "p/c" + " " + seojuncoin + " coins you have"
+  document.getElementById("add_robot_id").innerHTML = robot_plus_money + " points require"
+  document.getElementById("speed_robot_id").innerHTML = robot_speed_money + " points require"
 }
 
 function fortune_function(){
@@ -327,19 +329,23 @@ function check_robot(){
 }
 
 function upgrade_robot_speed(){
+  window.alert("speed 초기 단계 반응 확인 완료");
   if(0 < point - robot_speed_money){
     point = point - robot_speed_money;
     robot_speed_money += 325;
     robot_speed -= 50;
+    window.alert("speed 확인 완료");
     update();
   }
 }
 
 function upgrade_robot_add(){
+  window.alert("add 초기 단계 반응 확인 완료");
   if (0 < point - robot_plus_money){
     point = point - robot_plus_money;
     robot_plus_money += 325;
     robot_plus += 1;
+    window.alert("add 확인 완료");
     update();
   }
 }
