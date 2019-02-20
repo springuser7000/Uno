@@ -375,4 +375,10 @@ function reset_robot_speed_timer(){
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
+  $(document).bind('keydown', function(e){
+    if(e.keyCode == 123){
+      e.preventDefault();
+      e.returnValue = false;
+    }
+  });
 });
