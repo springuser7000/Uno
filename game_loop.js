@@ -332,11 +332,15 @@ function check_robot(){
 
 function upgrade_robot_speed(){
   if(0 <= money - robot_speed_money){
-    money = money - robot_speed_money;
-    robot_speed_money += 325;
-    robot_speed -= 100;
-    update();
-    reset_robot_speed_timer();
+    if (100 < robot_speed){
+      money = money - robot_speed_money;
+      robot_speed_money += 325;
+      robot_speed -= 100;
+      update();
+      reset_robot_speed_timer();
+    } else{
+      window.alert("You already did all robot's speed upgrade.");
+    }
   } else {
     if (alert_onoff == 1){
       window.alert("Not enough points to upgrade robot's speed");
