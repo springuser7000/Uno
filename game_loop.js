@@ -329,24 +329,28 @@ function check_robot(){
 }
 
 function upgrade_robot_speed(){
-  window.alert("speed 초기 단계 반응 확인 완료");
-  if(0 < point - robot_speed_money){
-    point = point - robot_speed_money;
+  if(0 <= money - robot_speed_money){
+    money = money - robot_speed_money;
     robot_speed_money += 325;
     robot_speed -= 50;
-    window.alert("speed 확인 완료");
     update();
+  } else {
+    if (alert_onoff == 1){
+      window.alert("Not enough points to upgrade robot's speed");
+    }
   }
 }
 
 function upgrade_robot_add(){
-  window.alert("add 초기 단계 반응 확인 완료");
-  if (0 < point - robot_plus_money){
-    point = point - robot_plus_money;
+  if (0 <= money - robot_plus_money){
+    money = money - robot_plus_money;
     robot_plus_money += 325;
     robot_plus += 1;
-    window.alert("add 확인 완료");
     update();
+  } else {
+    if (alert_onoff == 1){
+      window.alert("Not enough points to upgrade robot's power");
+    }
   }
 }
 
