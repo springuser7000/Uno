@@ -208,6 +208,8 @@ function key_down(){
       buy_all_seojuncoin()
     } else if (event.which == 221){
       sell_all_seojuncoin()
+    } else if (event.which == 33){
+      window.alert(robot_speed);
     }
 }
 
@@ -332,7 +334,7 @@ function upgrade_robot_speed(){
   if(0 <= money - robot_speed_money){
     money = money - robot_speed_money;
     robot_speed_money += 325;
-    robot_speed -= 50;
+    robot_speed -= 100;
     update();
   } else {
     if (alert_onoff == 1){
