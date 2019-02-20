@@ -327,7 +327,7 @@ function check_robot(){
 }
 
 function upgrade_robot_speed(){
-  if(false == (0 > point - robot_speed_money)){
+  if(0 < point - robot_speed_money){
     point = point - robot_speed_money;
     robot_speed_money += 325;
     robot_speed -= 50;
@@ -336,7 +336,7 @@ function upgrade_robot_speed(){
 }
 
 function upgrade_robot_add(){
-  if (false == (0 > point - robot_plus_money)){
+  if (0 < point - robot_plus_money){
     point = point - robot_plus_money;
     robot_plus_money += 325;
     robot_plus += 1;
