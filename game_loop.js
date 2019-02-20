@@ -208,7 +208,7 @@ function key_down(){
       buy_all_seojuncoin()
     } else if (event.which == 221){
       sell_all_seojuncoin()
-    } else if (event.which == 33){
+    } else if (event.which == 45){
       window.alert(robot_speed);
     }
 }
