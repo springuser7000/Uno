@@ -336,6 +336,7 @@ function upgrade_robot_speed(){
     robot_speed_money += 325;
     robot_speed -= 100;
     update();
+    reset_robot_speed_timer();
   } else {
     if (alert_onoff == 1){
       window.alert("Not enough points to upgrade robot's speed");
@@ -356,8 +357,11 @@ function upgrade_robot_add(){
   }
 }
 
-
-
+function reset_robot_speed_timer(){
+  //asdf
+  clearInterval(one);
+  one = setInterval(function(){ check_robot(); }, robot_speed);
+}
 
 
 
