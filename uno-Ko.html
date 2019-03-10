@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+Copyright 2019 springuser700 all rights reserved. 
+You can not delete this sign. 
+Copyright 2019 springuser700 all rights reserved. 
+You can not delete this sign. 
+Copyright 2019 springuser700 all rights reserved. 
+-->
+
+<head>
+<title>Uno</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+  body {
+    background-color: #ffece5;
+  }
+  #Gotab1 {
+    background-color: #ffece5;
+    color: gray
+  }
+  #Gotab2 {
+    background-color: #ffece5;
+    color: gray
+  }
+  </style>
+
+</head>
+<body onKeydown = "key_down()" oncontextmenu='return false'>
+<br>
+
+<div class="container">
+<h2 id ="money_html" class="display-2"></h2>
+<br>
+<!-- Menu -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home" id = "Gotab1">오리지널</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#More_zone" id = "Gotab2">확장판</a>
+  </li>
+</ul>
+
+
+<!--
+one two three four five six seven eight nine ten
+eleven twelve 
+-->
+
+
+
+<!-- Some Tabs-->
+
+<!-- 포인트 획득 -->
+<div class="tab-content">
+  <div id="home" class="container tab-pane active"><br>
+    <div class="card bg-dark text-white">
+  <div class="card-body text-center">
+    <h3 id = "info" align = "center"></h3>
+  </div>
+</div>
+    <br>
+    <button type="button" class="btn btn-outline-warning btn-block" onClick = "earnmoney();"><img src="https://img.icons8.com/color/48/000000/coins.png"></button>
+    <button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#Modal1"><img src="https://img.icons8.com/color/48/000000/buy-upgrade.png"></button>
+    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#Modal3"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+    <button type="button" class="btn btn-outline-danger btn-block"  onClick = "Alert_OnOff_function();"><img src="https://img.icons8.com/color/48/000000/error.png"></button>
+  </div>
+  <div id="More_zone" class="container tab-pane fade"><br>
+    <div class="card bg-dark text-white">
+      <div class="card-body text-center">
+        <h3 id = "info2" align = "center"></h3>
+      </div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal5"><img src="https://img.icons8.com/color/48/000000/small-business.png"></button>
+    <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#Modal2"><img src="https://img.icons8.com/color/48/000000/bullish.png"></button>
+    <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#computer_modal"><img src="https://img.icons8.com/color/48/000000/computer.png"></button>
+    
+  </div>
+  <div id="Computer_zone" class="container tab-pane fade"><br>
+    <div class="card bg-dark text-white">
+      <div class="card-body text-center">
+        <h3 id = "info3" align = "center"></h3>
+      </div>
+
+    </div>
+    <br>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Some Modals-->
+
+
+
+<div class="modal fade" id="Modal1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">채굴 / 행운 업그레이드</h4>
+      </div>
+
+      <div class="modal-body">
+        <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_hardware()" id = "how_much_mining_upgrade">채굴 업그레이드</button>
+        <button type="button" class="btn btn-outline-warning btn-block" onClick = "upgrade_software()" id = "how_much_fortune_upgrade">행운 업그레이드</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">닫기</button>
+      </div>
+      
+    </div>
+  </div>
+</div> 
+<div class="modal fade" id="Modal2">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">서준코인</h4>
+      </div>
+      <div class="modal-body">
+          <div class="card bg-dark text-white">
+              <div class="card-body text-center">
+                  <h3 id = "invest" align = "center"></h3>
+              </div>
+            </div>
+            <p align = "center">서준코인에 투자하여 더 많은 돈을 버십시오!</p>
+            <button type="button" class="btn btn-outline-success btn-block" data-toggle="tooltip" data-placement="top" title = "Reload seojuncoin" onClick = "reload_seojuncoin()"><img src="https://img.icons8.com/color/48/000000/billing.png"><img src="https://img.icons8.com/color/48/000000/synchronize.png"></button>
+            <button type="button" class="btn btn-outline-success btn-block" data-toggle="tooltip" data-placement="top" title = "Buy seojuncoin" onClick = "buy_seojuncoin()"><img src="https://img.icons8.com/color/48/000000/billing.png"><img src="https://img.icons8.com/color/48/000000/shopping-cart-loaded.png"></button>
+            <button type="button" class="btn btn-outline-success btn-block" data-toggle="tooltip" data-placement="top" title = "Sell seojuncoin" onClick = "sell_seojuncoin()"><img src="https://img.icons8.com/color/48/000000/billing.png"><img src="https://img.icons8.com/color/48/000000/sell.png"></button>
+            <button type="button" class="btn btn-outline-success btn-block" data-toggle="tooltip" data-placement="top" title = "Buy(All money) seojuncoin" onClick = "buy_all_seojuncoin()"><img src="https://img.icons8.com/color/48/000000/billing.png"><img src="https://img.icons8.com/color/48/000000/shopping-cart-loaded.png"></button>
+            <button type="button" class="btn btn-outline-success btn-block" data-toggle="tooltip" data-placement="top" title = "Sell(All money) seojuncoin" onClick = "sell_all_seojuncoin()"><img src="https://img.icons8.com/color/48/000000/billing.png"><img src="https://img.icons8.com/color/48/000000/sell.png"></button>
+      </div>
+      
+              
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">닫기</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Modal3">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">복권</h4>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_cheap()"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
+        <p align = "center">10 포인트 필요 | 0 - 20 반환</p>
+        <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_midium()"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
+        <p align = "center">50 포인트 필요 | 0 - 150 반환</p>
+        <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expencive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
+        <p align = "center">100 포인트 필요 | 50 - 200 반환</p>
+        <!-- springuser7000-->
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+<div class="modal fade" id="Modal4">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Command</h4>
+      </div>
+      <div class="modal-body">
+  <div class="form-group has-success has-feedback">
+      <input type="text" class="form-control" id="input_some_command" onkeyup = "Input_command();">
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="Modal5">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">상점</h4>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-outline-dark btn-block" onClick = "Wait_and_boom()" data-toggle="tooltip" data-placement="bottom" title="10000 Point 필요"><img src="https://img.icons8.com/color/48/000000/bomb-with-timer.png"></button>
+        <p align = "center">복제 폭탄(1분 뒤에 지금 지출한 포인트의 2배를 돌려줍니다.)</p>
+        <button type="button" class="btn btn-outline-dark btn-block" onClick = "temple()" data-toggle="tooltip" data-placement="bottom" title="1000 Point 필요"><img src="https://img.icons8.com/color/48/000000/potion.png"></button>
+        <p align = "center">행운의 물약(30초 동안 행운 포인트를 무조건 획득합니다.)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">닫기</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="computer_modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">로봇</h4>
+      </div>
+      <div class="modal-body">
+        <button id = "buy_robot_a" type="button" class="btn btn-outline-dark btn-block" onClick = "buy_robot()" data-toggle="tooltip" data-placement="bottom" title="5000 Point 필요"><img src="https://img.icons8.com/color/48/000000/robot.png"></button>
+        <button id = "upgrade_" type="button" class="btn btn-outline-dark btn-block" onClick = "upgrade_robot_speed()" data-toggle="tooltip" data-placement="bottom" title="Upgrade robot speed"><img src="https://img.icons8.com/color/48/000000/speedometer.png"></button>
+        <p id = "speed_robot_id" align = "center"></p>
+        <button id = "upgrade_" type="button" class="btn btn-outline-dark btn-block" onClick = "upgrade_robot_add()" data-toggle="tooltip" data-placement="bottom" title="Upgrade_robot_power"><img src="https://img.icons8.com/color/48/000000/online-money-transfer.png"></button>        <p id = ""></p>
+        <p id = "add_robot_id" align = "center"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">닫기</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<script src = "game_loop-ko.js"></script>
+
+
+</body>
+</html>
