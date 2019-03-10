@@ -8,7 +8,7 @@ You can not delete this sign.
 Copyright 2019 springuser700 all rights reserved. 
 -->
 
- <head>
+<head>
 <title>Uno</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +31,7 @@ Copyright 2019 springuser700 all rights reserved.
   </style>
 
 </head>
-<body onKeydown = "key_down()">
+<body onKeydown = "key_down()" oncontextmenu='return false'>
 <br>
 
 <div class="container">
@@ -60,7 +60,7 @@ eleven twelve
 <!-- 포인트 획득 -->
 <div class="tab-content">
   <div id="home" class="container tab-pane active"><br>
-      <div class="card bg-dark text-white">
+    <div class="card bg-dark text-white">
   <div class="card-body text-center">
     <h3 id = "info" align = "center"></h3>
   </div>
@@ -162,12 +162,12 @@ eleven twelve
       </div>
       <div class="modal-body">
         <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_cheap()"><img src="https://img.icons8.com/color/40/000000/cards.png"></button>
-        <p  align = "center">10 point require | 0 - 20 return</p>
+        <p align = "center">10 point require | 0 - 20 return</p>
         <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_midium()"><img src="https://img.icons8.com/plasticine/40/000000/chip.png"></button>
         <p align = "center">50 point require | 0 - 150 return</p>
         <button type="button" class="btn btn-outline-dark btn-block" onClick = "Lottery_expencive()"><img src="https://img.icons8.com/color/40/000000/slot-machine.png"></button>
         <p align = "center">100 point require | 50 - 200 return</p>
-        
+        <!-- springuser7000-->
       </div>
 
       <div class="modal-footer">
@@ -175,6 +175,12 @@ eleven twelve
     </div>
   </div>
 </div>
+
+
+
+
+
+
 </div>
 <div class="modal fade" id="Modal4">
   <div class="modal-dialog modal-dialog-centered">

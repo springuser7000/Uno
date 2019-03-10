@@ -1,5 +1,5 @@
 Project ＵＮＯ
-==============
+ 
 > Project Uno(Code Name) is clicker game. Enjoy it!
 
 
